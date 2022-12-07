@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <iomanip>
 
 using namespace std;
 using std::vector;
@@ -103,7 +102,7 @@ class Committee {
     public:
 
     vector <Student> students;
-    vector <Student> rejectedStudents;
+    vector <Student> rejectedStudenta;
 
     Committee(vector <Student>& studentsList){
 
@@ -161,7 +160,7 @@ class Committee {
         
     }
 
-    void checkEligibility(Student& student){
+    void checkEligibility(Student student){
 
 
         if(checkGPA(student) == true && 
@@ -173,6 +172,8 @@ class Committee {
             student.isEligible = false;
         }
 
+
+        cout << student.isEligible << endl;
     }
 
     void doEligibilityCheck(){
@@ -186,27 +187,23 @@ class Committee {
 
     }
 
-    
-
     void printStudentInfo(int studentNum){
 
         for(int i = 0; i < students.size(); i++){
 
             if(studentNum == students[i].studentNum){
-
                 cout << students[i].studentNum << " ";
-                cout << left << setw(5) <<students[i].fName << " ";
-                cout << left << setw(7) <<students[i].lName << " ";
-                cout << left << setw(10) <<students[i].phoneNum << " ";
-                cout << left << setw(5) <<students[i].email << " ";
-                cout << left << setw(5) <<students[i].zip << " ";
-                cout << left << setw(10) <<students[i].dob << " ";
-                cout << left << setw(5) <<students[i].gender << " ";
-                cout << left << setw(5) <<students[i].aStatus << " ";
-                cout << left << setw(5) <<students[i].cGPA << " ";
-                cout << left << setw(5) <<students[i].lsGPA << " ";
-                cout << left << setw(5) <<students[i].isEligible << " ";
-                cout << left << setw(5) <<students[i].numCreditHours << endl;
+                cout << students[i].fName << " ";
+                cout << students[i].lName << " ";
+                cout << students[i].phoneNum << " ";
+                cout << students[i].email << " ";
+                cout << students[i].zip << " ";
+                cout << students[i].dob << " ";
+                cout << students[i].gender << " ";
+                cout << students[i].aStatus << " ";
+                cout << students[i].cGPA << " ";
+                cout << students[i].lsGPA << " ";
+                cout << students[i].numCreditHours << endl;
 
                 break;
             }
@@ -217,51 +214,24 @@ class Committee {
 
     void printAllStudents(){
 
+
         for(int i = 0; i < students.size(); i++){
 
             cout << students[i].studentNum << " ";
-            cout << left << setw(5) <<students[i].fName << " ";
-            cout << left << setw(7) <<students[i].lName << " ";
-            cout << left << setw(10) <<students[i].phoneNum << " ";
-            cout << left << setw(5) <<students[i].email << " ";
-            cout << left << setw(5) <<students[i].zip << " ";
-            cout << left << setw(10) <<students[i].dob << " ";
-            cout << left << setw(5) <<students[i].gender << " ";
-            cout << left << setw(5) <<students[i].aStatus << " ";
-            cout << left << setw(5) <<students[i].cGPA << " ";
-            cout << left << setw(5) <<students[i].lsGPA << " ";
-            cout << left << setw(5) <<students[i].isEligible << " ";
-            cout << left << setw(5) <<students[i].numCreditHours << endl;
+            cout << students[i].fName << " ";
+            cout << students[i].lName << " ";
+            cout << students[i].phoneNum << " ";
+            cout << students[i].email << " ";
+            cout << students[i].zip << " ";
+            cout << students[i].dob << " ";
+            cout << students[i].gender << " ";
+            cout << students[i].aStatus << " ";
+            cout << students[i].cGPA << " ";
+            cout << students[i].lsGPA << " ";
+            cout << students[i].isEligible << " ";
+            cout << students[i].numCreditHours << endl;
 
         }
-
-        cout << endl;
-
-        
-    }
-
-
-
-    void printRejectedStudents(){
-        for(int i = 0; i < rejectedStudents.size(); i++){
-
-            cout << students[i].studentNum << " ";
-            cout << left << setw(5) <<rejectedStudents[i].fName << " ";
-            cout << left << setw(7) <<rejectedStudents[i].lName << " ";
-            cout << left << setw(10) <<rejectedStudents[i].phoneNum << " ";
-            cout << left << setw(5) <<rejectedStudents[i].email << " ";
-            cout << left << setw(5) <<rejectedStudents[i].zip << " ";
-            cout << left << setw(10) <<rejectedStudents[i].dob << " ";
-            cout << left << setw(5) <<rejectedStudents[i].gender << " ";
-            cout << left << setw(5) <<rejectedStudents[i].aStatus << " ";
-            cout << left << setw(5) <<rejectedStudents[i].cGPA << " ";
-            cout << left << setw(5) <<rejectedStudents[i].lsGPA << " ";
-            cout << left << setw(5) <<rejectedStudents[i].isEligible << " ";
-            cout << left << setw(5) <<rejectedStudents[i].numCreditHours << endl;
-
-        }
-
-
     }
 
     void sendRejectionEmail(){
@@ -277,31 +247,7 @@ class Committee {
     void removeIneligible(){
 
         //Create a loop that will iterate through the students arraylist and delete every record where isEligible is false.
-        int n = students.size();
 
-
-        for(int i = 0; i < n; i++){
-
-            if(students[i].isEligible == false){
-    
-                students.erase(students.begin()+i);
-            }
-        }
-
-    }
-
-    void addRejectedStudents(){
-
-        //loops through students and adds all ineligible students to rejectedStudents 
-
-        for(int i = 0; i < students.size(); i++){
-
-            if(students[i].isEligible == false){
-                
-                rejectedStudents.push_back(students[i]);
-            }
-           
-        }
     }
 
     void sortByCGPA(){
@@ -380,7 +326,7 @@ int main() {
         "junior", 
         3.2, 
         3.8, 
-        10, 
+        12, 
         NULL, 
         0);
 
@@ -408,17 +354,11 @@ int main() {
     committee.addStudent(b);
     committee.addStudent(c);
 
-    committee.doEligibilityCheck();
-
-
-    committee.addRejectedStudents();
-
-    committee.removeIneligible();
+    //committee.doEligibilityCheck();
+    
+    committee.checkEligibility(a);
 
     committee.printAllStudents();
-    committee.printRejectedStudents();
-
-
     
 
 

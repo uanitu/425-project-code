@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"
+        content="IE-edge">
+        <meta name="viewport"
+        content="width-device-width,initial-scale=1.0">
+
+        <title>Apply</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a1e44932c2.js" crossorigin="anonymous"></script>"
+</head>
+<body>
+     <div class="container">
+         <header>Fill this Application</header> 
+
+        <form action="#">
+            <div class="form first">
+                <div class="personal details">
+
+                    <div class="field">
+                        <div class="input-field">
+                            <label>Student Number</label>
+                            <input type="text" placeholder="Enter your Student Number">
+                        </div>
+
+                        <div class="input-field">
+                            <label>First Name</label>
+                            <input type="text" placeholder="Enter your First Name">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Enter your Last Name">
+                        </div>
+                    </div>
+                    <div class="field">
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter your Email">
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="012-345-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Zip Code</label>
+                            <input type="number" placeholder="Zip Code">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="input-field">
+                            <label>Date of Birth</label>
+                            <input type="date" placeholder="Date of Birth">
+                        </div>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class ="fa solid fa-square-caret-right"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="form second">
+                <div class="more details">
+
+                    <div class="field">
+                        <div class="input-select">
+                            <label>Gender</label>
+                            <select input type="gender">
+                                <option value="none" selected>Gender</option>
+                                <option value="male">Male</option>
+	                            <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="input-select">
+                            <label>Academic Year</label>
+                            <select input type="gender">
+                                <option value="none" selected>Academic Year</option>
+                                <option value="freshman">Freshman</option>
+	                            <option value="sophmore">Sophmore</option>
+                                <option value="junior">Junior</option>
+	                            <option value="senior">Senior</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Cummulative GPA</label>
+                            <input type="text" placeholder="Enter Cummulative GPA">
+                        </div>
+                    </div>
+                    <div class="field">
+
+                        <div class="input-field">
+                            <label>Credit Hours latest Semester</label>
+                            <input type="text" placeholder="Enter latest credit hours">
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>Latest semester GPA</label>
+                            <input type="text" placeholder="Latest Semester GPA">
+                        </div>
+                    </div>
+        
+                    <div class="buttons">
+                    <div class="backBtn">
+                        <span class="btnText">Previous</span>
+                        <i class ="fa solid fa-square-caret-right"></i>
+                    </div>
+
+                    <button class="submitBtn">
+                        <input type ="submit" name="submit" value="submit">
+                        
+                    </button>
+                </div>
+                </div>
+            </div>
+
+        </form>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>
